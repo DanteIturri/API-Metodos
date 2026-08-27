@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
 
+import apiRoutes from './routes/api.routes.js';
+
 
 const app = express();
 // enviroment variables
@@ -15,11 +17,9 @@ app.use(morgan('dev'));
 app.use(cors());
 
 
+// Routes
+app.use('/api', apiRoutes);
 
-
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
