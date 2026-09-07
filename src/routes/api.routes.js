@@ -1,8 +1,4 @@
 import Router from "express";
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
-
 const router = Router();
 
 router.get('/', (req, res) => {
